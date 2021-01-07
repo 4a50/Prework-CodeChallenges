@@ -6,12 +6,12 @@ namespace PreWorkCodeChallenges
     {
         static void Main(string[] args)
         {
+            int[] intArray = new int[] {1, 3 ,2  };            
             //fiveNumbers();
-            for (int i = 1999; i < 2050; i++)
-            {
+            //leapYear(2000);
+            //Console.WriteLine(perfectSequence(intArray));
 
-                if (leapYear(i)) { Console.WriteLine($"Year: {i}  isLeapYear: {leapYear(i)}"); }
-            }
+
         }
         static void fiveNumbers()
         {
@@ -82,6 +82,34 @@ namespace PreWorkCodeChallenges
 
             }
                 return isLeapYear;
+        }
+        
+        static string perfectSequence(int[] intArray)
+        {
+            string str;
+            int sumArray = 0;
+            int productArray = 1;
+            bool isPerfect = false;
+            bool hasNegative = false;
+
+            foreach (int i in intArray)
+            {
+                if (i < 0)
+                {
+                    hasNegative = true;
+                }
+                sumArray += i;
+                productArray *= i;
+            }
+            if (sumArray == productArray) { isPerfect = true; }
+            if (isPerfect == true && hasNegative == false) { str = "Yes"; }
+            else { str = "No"; }
+
+            ///Perfect Sequence: 
+            /// (1) non-negative ints.  
+            /// (2) product of sequence is = thier sum
+                       
+            return str;
         }
     }
 }
