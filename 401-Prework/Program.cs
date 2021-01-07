@@ -6,8 +6,12 @@ namespace PreWorkCodeChallenges
     {
         static void Main(string[] args)
         {
-            fiveNumbers();
+            //fiveNumbers();
+            for (int i = 1999; i < 2050; i++)
+            {
 
+                if (leapYear(i)) { Console.WriteLine($"Year: {i}  isLeapYear: {leapYear(i)}"); }
+            }
         }
         static void fiveNumbers()
         {
@@ -28,6 +32,7 @@ namespace PreWorkCodeChallenges
                     enoughNums = true;
                 }
                 inRange = true;
+                Console.Write("int Array: ");
                 for (int i = 0; i < nums.Length; i++)
                 {
                     nums[i] = int.Parse(userNums[i]);
@@ -55,6 +60,28 @@ namespace PreWorkCodeChallenges
             Console.WriteLine();
             Console.WriteLine($"Your Score based on {searchVal} is {score}");
 
+        }
+        static bool leapYear(int year)
+        {
+            
+            bool isLeapYear = false;
+            //if year is /4
+            if (year % 4 == 0)
+            {
+                if (year % 100 == 0)
+                {
+                    if (year % 400 == 0)
+                    {
+                        isLeapYear = true;
+                    }
+                }
+            else
+                {
+                    isLeapYear = true;
+                }
+
+            }
+                return isLeapYear;
         }
     }
 }
