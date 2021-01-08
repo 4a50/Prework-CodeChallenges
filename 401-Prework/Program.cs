@@ -12,17 +12,17 @@ namespace PreWorkCodeChallenges
             //leapYear(2000);
             //Console.WriteLine(perfectSequence(intArray));
 
-            
+
             int[,] myArray = new int[3, 5] { { 1, 2, 3, 4, 5 }, { 6, 7, 8, 9, 10 }, { 11, 12, 13, 14, 15 } };
-            int[] sumArray = sumOfRows(myArray);
+            int[] sumArray = SumOfRows(myArray);
             //For displaying the sumOfRows Exercise
             StringBuilder display = new StringBuilder("Sum of the Array: [ ");
             foreach (int i in sumArray) { display.Append(i + " "); }
             display.Append("]");
             Console.WriteLine(display.ToString());
-            
+
         }
-        static void fiveNumbers()
+        static void FiveNumbers()
         {
             bool enoughNums = false;
             bool inRange = true;
@@ -70,7 +70,7 @@ namespace PreWorkCodeChallenges
             Console.WriteLine($"Your Score based on {searchVal} is {score}");
 
         }
-        static bool leapYear(int year)
+        static bool LeapYear(int year)
         {
 
             bool isLeapYear = false;
@@ -93,7 +93,7 @@ namespace PreWorkCodeChallenges
             return isLeapYear;
         }
 
-        static string perfectSequence(int[] intArray)
+        static string PerfectSequence(int[] intArray)
         {
             string str;
             int sumArray = 0;
@@ -121,27 +121,27 @@ namespace PreWorkCodeChallenges
             return str;
         }
 
-        static int[] sumOfRows(int[,] multiArray)
+        static int[] SumOfRows(int[,] multiArray)
         {
             int length = multiArray.GetLength(0);
             int width = multiArray.GetLength(1);
             int[] sumArray = new int[length];
-               
-                int rowSum = 0;                
-                for (int i = 0; i < length; i++)
-                {                    
-                    for (int j = 0; j < width; j++)
-                    {
-                        rowSum += multiArray[i, j];
-                    }
-                    sumArray[i] = rowSum;
-                    rowSum = 0;
-                }                
+
+            int rowSum = 0;
+            for (int i = 0; i < length; i++)
+            {
+                for (int j = 0; j < width; j++)
+                {
+                    rowSum += multiArray[i, j];
+                }
+                sumArray[i] = rowSum;
+                rowSum = 0;
+            }
             return sumArray;
         }
-        static int[,] randomArrayGenerator(int length, int width)
+        static int[,] RandomArrayGenerator(int length, int width)
         {
-            Random rand = new Random();            
+            Random rand = new Random();
             int randNumber;
             int[,] multiArray = new int[length, width];
             for (int i = 0; i < length; i++)
@@ -149,7 +149,7 @@ namespace PreWorkCodeChallenges
                 for (int j = 0; j < width; j++)
                 {
                     randNumber = rand.Next(1, 20);
-                    multiArray[i, j] = randNumber;                    
+                    multiArray[i, j] = randNumber;
                 }
             }
             return multiArray;
